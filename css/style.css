@@ -1,0 +1,136 @@
+/* Phillip Jones portfolio: one simple stylesheet */
+
+:root {
+  --paper: #f5f1ea;
+  --ink: #1e1b18;
+  --muted: #6b635a;
+  --line: #ddd5c8;
+  --accent: #a33a22;
+  --card: #fffdf9;
+  --max: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+h1, h2, .brand, .card-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 .4em;
+}
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: 1.6rem; }
+
+a { color: var(--accent); }
+a:hover { color: var(--ink); }
+
+img, video { max-width: 100%; height: auto; display: block; }
+
+main { max-width: var(--max); margin: 0 auto; padding: 0 20px 64px; }
+
+/* ---------- navigation ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  max-width: var(--max); margin: 0 auto; padding: 14px 20px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px;
+}
+.brand { font-size: 1.35rem; margin: 0; color: var(--ink); text-decoration: none; }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 22px; }
+.nav ul a {
+  color: var(--ink); text-decoration: none; font-weight: 600; font-size: .95rem;
+  padding: 4px 0; border-bottom: 2px solid transparent;
+}
+.nav ul a:hover, .nav ul a.active { border-bottom-color: var(--accent); }
+
+/* ---------- shared bits ---------- */
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; font-weight: 600; color: var(--muted); margin: 0 0 8px; }
+.eyebrow a { color: var(--muted); }
+.lede { font-size: 1.12rem; max-width: 46em; }
+.button {
+  display: inline-block; padding: 10px 18px; margin: 4px 6px 4px 0;
+  background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 600; border-radius: 3px;
+}
+.button:hover { background: var(--accent); color: #fff; }
+.button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.button.ghost:hover { background: var(--ink); color: var(--paper); }
+
+.page-head { padding: 48px 0 16px; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
+.section-title { margin-top: 56px; }
+.jump { font-weight: 600; margin: -20px 0 40px; }
+
+/* ---------- home ---------- */
+.hero { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; padding: 56px 0 24px; }
+.hero-image img { border-radius: 4px; }
+
+/* ---------- cards (work index) ---------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; }
+.card {
+  display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line);
+  color: var(--ink); text-decoration: none; transition: transform .15s;
+}
+.card:hover { transform: translateY(-3px); color: var(--ink); }
+.card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.card-title { font-size: 1.35rem; padding: 16px 18px 4px; }
+.card-text { padding: 0 18px 18px; color: var(--muted); font-size: .95rem; }
+
+/* ---------- project entries ---------- */
+.work {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 36px; align-items: start;
+  padding-bottom: 48px; margin-bottom: 48px; border-bottom: 1px solid var(--line);
+  scroll-margin-top: 90px;
+}
+.work.wide { grid-template-columns: 1fr; }
+.work.wide .info { max-width: 46em; order: -1; }
+.media img, .video video { background: var(--card); border: 1px solid var(--line); }
+.media.multi { display: grid; gap: 14px; }
+.media.multi > a:only-child { grid-column: 1 / -1; }
+.work.wide .media.multi { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.media.gallery { columns: 3 260px; column-gap: 16px; }
+.media.gallery a { display: block; break-inside: avoid; margin-bottom: 16px; }
+.info h2 { margin-bottom: 4px; }
+.label { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; font-weight: 600; margin: 0 0 6px; }
+.meta { color: var(--muted); font-size: .92rem; margin: 0 0 14px; }
+
+/* ---------- about ---------- */
+.about { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: start; }
+.about-photo { position: sticky; top: 90px; }
+.about-text h2 { margin-top: 0; }
+.about-text h2 + p { margin-top: 0; }
+.about-text ul + p, .about-text p + h2 { margin-top: 32px; }
+.plain { padding-left: 1.1em; }
+.plain li { margin-bottom: 8px; }
+
+/* ---------- contact ---------- */
+.contact-list { list-style: none; padding: 0; max-width: 640px; }
+.contact-list li { display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 1.15rem; }
+.contact-list span { width: 110px; color: var(--muted); font-weight: 600; }
+
+/* ---------- footer ---------- */
+.site-footer { border-top: 1px solid var(--line); text-align: center; padding: 28px 20px 40px; color: var(--muted); font-size: .92rem; }
+.site-footer p { margin: 4px 0; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 800px) {
+  .hero, .work, .about { grid-template-columns: 1fr; gap: 24px; }
+  .about-photo { position: static; max-width: 420px; }
+  .page-head { padding-top: 32px; }
+  .contact-list li { flex-direction: column; gap: 2px; }
+}
+
+/* keep tall pieces from running off the screen */
+.work:not(.wide) .media img { max-height: 760px; width: auto; }
