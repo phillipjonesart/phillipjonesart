@@ -34,32 +34,25 @@ h1, h2 { line-height: 1.15; }
 .intro p { font-size: 17px; margin: 0 0 12px; }
 .back { font-size: 14px; color: #666; }
 
-/* the grid: rows of art at their real shapes, no bars, no cropping.
-   Each tile grows in proportion to its width/height ratio (--r), so pieces in a row come out close to the same height. */
-.grid { display: flex; flex-wrap: wrap; gap: 56px 24px; }
-.grid::after { content: ""; flex-grow: 999; }
-.tile { margin: 0; flex: var(--r) 1 calc(var(--r) * 300px); max-width: calc(var(--r) * 390px); min-width: min(100%, 210px); }
-.figures { gap: 20px; }
-.figures .tile { flex-basis: calc(var(--r) * 280px); max-width: calc(var(--r) * 360px); min-width: 0; }
-/* when layout.js runs it sets each tile width exactly */
-.grid.rows .tile { flex: none; max-width: none; min-width: 0; }
-.grid.rows::after { display: none; }
-.pics { display: flex; gap: 10px; align-items: flex-start; }
-.pic { flex: calc(var(--r) * 100) 1 0; min-width: 0; display: block; }
-.pic img, .pic video { width: 100%; height: auto; }
-figcaption { padding-top: 14px; max-width: 640px; }
+/* the grid: every tile the same size */
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px 32px; }
+.tile { margin: 0; }
+.frame {
+  display: block; aspect-ratio: 4 / 5; background: #f2f2f2;
+  overflow: hidden;
+}
+.frame img { width: 100%; height: 100%; object-fit: contain; }
+.frame.video { aspect-ratio: auto; background: #000; }
+.frame.video video { width: 100%; height: auto; }
+figcaption { padding-top: 14px; }
 figcaption h2 { font-size: 17px; margin: 0 0 4px; }
 figcaption p { font-size: 15px; margin: 0 0 10px; }
 .meta { color: #666; font-size: 14px !important; }
 .label { text-transform: uppercase; letter-spacing: .08em; font-size: 12px !important; font-weight: 700; color: #666; margin-bottom: 6px !important; }
 
-/* work index: same-size cards, art fills the frame */
-.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px 28px; }
-.frame { display: block; aspect-ratio: 4 / 5; overflow: hidden; }
-.frame img { width: 100%; height: 100%; object-fit: cover; }
-
 /* work index cards: same size, art fills the frame */
 .card { display: block; text-decoration: none; }
+.card .frame img { object-fit: cover; }
 .card-title { display: block; font-size: 17px; font-weight: 700; margin-top: 14px; }
 .card-text { display: block; font-size: 14px; color: #666; margin-top: 4px; }
 .card:hover .card-title { box-shadow: inset 0 -2px 0 #111; display: inline-block; }
@@ -103,13 +96,11 @@ figcaption p { font-size: 15px; margin: 0 0 10px; }
 .foot a { color: #666; }
 
 /* tablets and phones */
-@media (max-width: 900px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 20px; } }
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 20px; } }
 @media (max-width: 560px) {
   .top, .hero-nav, .foot { padding-left: 20px; padding-right: 20px; }
   .wrap { padding: 20px 20px 56px; }
-  .cards { grid-template-columns: 1fr; }
-  .tile { flex-basis: 100%; max-width: none; }
-  .figures .tile { flex-basis: 40%; max-width: none; }
+  .grid { grid-template-columns: 1fr; }
   .hero-nav { justify-content: center; }
   .cv dl { grid-template-columns: 1fr; gap: 2px; }
   .cv dd { margin-bottom: 12px; }
