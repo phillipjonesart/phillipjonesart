@@ -5,50 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About | Phillip Jones</title>
   <meta name="description" content="About Phillip Jones, artist">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="top">
-<header class="site-header">
-  <nav class="nav">
-    <a class="brand" href="index.html">Phillip Jones</a>
+<body>
+<header class="top">
+  <a class="name" href="index.html">Phillip Jones</a>
+  <nav aria-label="Main">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="art-74.html">Art 74</a></li>
       <li><a href="work.html">Work</a></li>
-      <li><a href="about.html" class="active" aria-current="page">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="art-74.html">Art 74</a></li>
+      <li><a href="about.html" class="on">About</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
-<main>
-<section class="page-head">
-  <h1>About</h1>
-</section>
-<div class="about">
-  <div class="about-photo">
-    <img src="img/about/portrait.jpg" alt="Phillip Jones standing on a hilltop with a drawn dragon flying overhead">
-  </div>
-  <div class="about-text">
+<main class="wrap about">
+<img class="about-photo" src="img/about/portrait.jpg" alt="Phillip Jones on a hilltop with a drawn dragon flying overhead">
+<div class="cv">
+  <h1>Phillip (Gavin) Jones</h1>
+  <p class="meta">Studio Art &middot; San Jose, California</p>
+
+  <section>
     <h2>Artist Statement</h2>
-    <p>I'm Phillip Jones, though most people call me Gavin. I make traditional and digital drawings and paintings, and short digital animations. I work with pencil, marker, and paint, and digitally in Procreate and Photoshop. I'm interested in concept art, character design, background painting, prop design, storyboarding, and the rest of animation pre-production and visual development.</p>
-    <p>I'm driven by telling stories and making images that pull people in. I'm drawn to real stories from history and to historical fiction, especially European and American history, Indigenous stories, and science and natural history. I care most about the stories that are lesser known. I'm also influenced by art history, the animation I grew up with, and current events. I want to tell historical stories that mirror the problems of today, including the role capitalism and U.S. imperialism have played in shaping the modern world.</p>
-    <p>I want people to notice the attention to detail in my work, the accuracy to historical reference, and designs that feel believable. My style sits between realism and 2D hand-drawn animation. I'm still growing as an artist, and I'm working toward these goals one piece at a time.</p>
+    <p>I make traditional and digital drawings and paintings, and short digital animations, in pencil, marker, paint, Procreate, and Photoshop. I'm interested in concept art, character design, background painting, prop design, storyboarding, and the rest of animation pre-production.</p>
+    <p>I'm drawn to real stories from history and to historical fiction, especially European and American history, Indigenous stories, and science and natural history. I care most about the stories that are lesser known, and I want to tell ones that mirror the problems of today, including the role capitalism and U.S. imperialism have played in shaping the modern world.</p>
+    <p>I want people to notice the detail in my work, the accuracy to historical reference, and designs that feel believable. My style sits between realism and 2D hand-drawn animation.</p>
+  </section>
+
+  <section>
     <h2>Education</h2>
-    <ul class="plain">
-      <li><strong>San José State University</strong>, BA in Studio Art, expected 2027</li>
-      <li><strong>Santa Barbara City College</strong>, coursework in animation, interactive technology, and video graphics and special effects, 2022 to 2024. One work shown in the SBCC Student Exhibition, 2024.</li>
-      <li><strong>Diablo Valley College</strong>, coursework in web, digital, and multimedia design, 2020 to 2021</li>
-    </ul>
-    <p><a class="button" href="contact.html">Get in touch &rarr;</a></p>
-  </div>
+    <dl>
+      <dt>2026 to 2027</dt><dd><strong>San José State University</strong>, San Jose, CA<br>BA, Studio Practice, Pictorial Art emphasis (in progress, expected May 2027)</dd>
+      <dt>2022 to 2024</dt><dd><strong>Santa Barbara City College</strong>, Santa Barbara, CA<br>Coursework in Animation, Interactive Technology, Video Graphics and Special Effects, and Computer Science</dd>
+      <dt>2020 to 2021</dt><dd><strong>Diablo Valley College</strong>, Pleasant Hill, CA<br>Coursework in Web Page, Digital/Multimedia, and Information Resources Design</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Exhibitions</h2>
+    <dl>
+      <dt>2024</dt><dd><strong>Student Exhibition</strong>, SBCC Campus Gallery, Santa Barbara, CA (group show, one work)</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Media and Tools</h2>
+    <p>Pencil, marker, ink, and paint &middot; Procreate &middot; Photoshop &middot; HTML and CSS</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <dl>
+      <dt>Email</dt><dd><a href="mailto:412pjones@gmail.com">412pjones@gmail.com</a></dd>
+      <dt>Instagram</dt><dd><a href="https://www.instagram.com/gavinj0nes/">@gavinj0nes</a></dd>
+      <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/phillipjones02">linkedin.com/in/phillipjones02</a></dd>
+    </dl>
+  </section>
 </div>
 </main>
-<footer class="site-footer">
-  <p>Phillip Jones &middot; <a href="mailto:412pjones@gmail.com">412pjones@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/phillipjones02">LinkedIn</a> &middot; <a href="https://www.instagram.com/gavinj0nes/">Instagram</a></p>
-  <p><a href="#top">Back to top</a></p>
+<footer class="foot">
+  <span>&copy; 2026 Phillip Jones</span>
+  <a href="mailto:412pjones@gmail.com">412pjones@gmail.com</a>
+  <a href="https://www.instagram.com/gavinj0nes/">Instagram</a>
+  <a href="https://www.linkedin.com/in/phillipjones02">LinkedIn</a>
 </footer>
 </body>
 </html>
